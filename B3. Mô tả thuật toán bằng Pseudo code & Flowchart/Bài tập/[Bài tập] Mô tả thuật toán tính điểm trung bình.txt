@@ -1,0 +1,9 @@
+Begin
+  INPUT
+     MATH
+     PHYSICS
+     CHEMISTRY
+  AVERAGE = (MATH PHYSICS CHEMISTRY)/3
+                         
+    DISPLAY  AVERAGE
+End
