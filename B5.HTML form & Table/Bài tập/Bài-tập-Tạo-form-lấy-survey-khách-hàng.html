@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .agerange {
+        font-size: 120%;
+        width: 50%;
+    }
+    * {
+        list-style-type: none;
+        padding: 0%;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <hr>
+            <h3> Market Research Survey </h3>
+            <p>Please take a few moments to complete this satisfacsion survey</p>
+            <hr>
+            
+                <ul>
+                    <div>
+                        <li><b>What is your age range?</b><br>
+                            <select name="age" class="agerange">
+                                <option value="">18-24</option>
+                                <option value="">25-34</option>
+                                <option value="">35-50</option>
+                                <option value="">50+</option>
+                            </select>
+                        </li><br>
+                        <li>
+                            <b>What is your yearly income range?</b><br>
+                            <select name="year" class="agerange">
+                                <option value="">$0 - $25000</option>
+                                <option value="">$25001 - $50000</option>
+                                <option value="">$50001 - $100000</option>
+                                <option value="">$100000+</option>
+                            </select>
+                        </li><br>
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <li>
+                            <b>Gender</b><br>
+                            <input type="radio" name="gender">Male <br>
+                            <input type="radio" name="gender">Female <br>
+                            <input type="radio" name="gender">Nonbinary <br>
+                            <input type="radio" name="gender">Other <br>
+                            <input type="text" name="other" size="15">
+                        </li>
+                    </div>
+                    <div style="margin: 20px 0px ;">
+                        <li>
+                            <label for=""><b>Which of the following products have your purchased in the last 2 months. Please check all that apply.</b></label> <br>
+                            <input type="checkbox" name="product">Product 1 <br>
+                            <input type="checkbox" name="product">Product 2 <br>
+                            <input type="checkbox" name="product">Product 3 <br>
+                        </li>
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <li>
+                            <label for=""><b>How often would you use our new product?</b></label> <br>
+                            <input type="radio" name="time">Daily <br>
+                            <input type="radio" name="time">Weekly <br>
+                            <input type="radio" name="time">Monthly <br>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <label for=""><b>What would you pay for the new product?</b></label> <br>
+                            <label for="">$</label>
+                            <input type="text" name="wouldpay" size="5"> . <input type="text" name="wouldpay" size="2">
+                        </li>
+                    </div>
+                </ul>
+
+            
+        </form>
+    </div>
+</body>
+</html>
