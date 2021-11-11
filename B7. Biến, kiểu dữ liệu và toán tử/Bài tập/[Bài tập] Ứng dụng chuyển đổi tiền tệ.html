@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            padding: 8px;
+            width: 50%;
+            text-align: center;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th >To Currency</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="inputMoney" size="20">
+                </td>
+                <td>
+                    <select name="" id="fromCurrency">
+                        <option value="">--Chọn--</option>
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="" id="toCurrency">
+                        <option value="">--Chọn--</option>
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" onclick="myMoney();">Convert</button>
+                </td>
+            </tr>
+        </table>
+        <label for="">Kết quả là: </label>
+        <label for="" id="demo"></label>
+    </div>
+</body>
+</html>
+<script>
+    
+   function myMoney() {
+       let result;
+       var money = parseInt(document.getElementById('inputMoney').value);
+       var fCurrency = document.getElementById('fromCurrency').value;
+       var tCurrency = document.getElementById('toCurrency').value;
+       if (fCurrency=='VND'){
+           if (tCurrency=='VND'){
+               result = money * 1;
+           }
+           else {
+               result = money / 23000;
+           }
+       }
+       else {
+           if (tCurrency=='VND') {
+               result = money * 23000;
+           }
+           else {
+               result = money * 1;
+           }
+       }
+        document.getElementById('demo').innerHTML= parseFloat(result).toFixed(6) + '';
+
+
+   }
+   
+    
+   
+</script>
+
+

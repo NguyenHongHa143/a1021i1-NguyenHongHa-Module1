@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.
+   let physical = parseInt( prompt('Nhập điểm môn lý của bạn: ') );
+   let chemistry = parseInt( prompt('Nhập điểm môn hóa của bạn: '));
+   let biology = parseInt( prompt('Nhập điểm môn sinh của bạn: '));
+   let average = (physical+chemistry+biology)/3;
+   let sum = (physical+chemistry+biology);
+   document.write('Trung bình các môn là: '+ average);
+   document.write ('<br/>');
+   document.write('Tổng của các môn là: ' + sum);
+   document.write('<br/>');
+// Bài 2:  Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng dẫn: C/5 = (F-32)/9]  
+    let temperatureC = parseInt(prompt('Nhập nhiệt độ cần đổi: '));
+    let temperatureF = (temperatureC*9/5)+32;
+    document.write('Kết quả là: '+ temperatureF);
+    document.write('<br/>');
+// Bài 3: Viết chương trình tính diện tích hình tròn
+    let r = parseInt(prompt('nhập bán kính hình tròn:(cm)  '));
+    let areaCircle = r*r*3.14;
+    document.write('diện tích hình tròn là: '+ areaCircle + 'cm2');
+    document.write('<br/>');
+// Bài 4: Viết chương trình chu vi hình tròn
+    let perimeterCircle = r*2*3.14;
+    document.write('chu vi hình tròn là: '+ parseFloat(perimeterCircle).toFixed(2) + 'cm');
+    
+
+</script>
+</body>
+</html>

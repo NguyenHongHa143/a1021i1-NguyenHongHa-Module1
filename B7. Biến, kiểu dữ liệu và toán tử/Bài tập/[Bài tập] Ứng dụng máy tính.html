@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết 4 hàm để lấy giá trị từ form, tính toán và trả về kết quả tương ứng với 4 phép tính. -->
+    <table>
+        <form action="" >
+            <tr>
+                <td colspan="2">
+                    <input type="text" id="inputNum1" size="15">
+                </td>
+                <td colspan="2">
+                    <input type="text" id="inputNum2" size="15">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="caculate1();" >(+)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="caculate2();">(-)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="caculate3();">(*)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="caculate4();">(/)</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <label for="">Result: </label>
+    <textarea name="" id="demo" cols="30" rows="1"></textarea>
+    
+</body>
+</html>
+<script>
+    function caculate1() {
+        let number1 = document.getElementById('inputNum1').value;
+        let number2 = document.getElementById('inputNum2').value;
+        let result = parseInt(number1) + parseInt(number2);
+        document.getElementById('demo').innerHTML='Addition: ' + result;
+        
+    }
+    function caculate2() {
+        let number1 = document.getElementById('inputNum1').value;
+        let number2 = document.getElementById('inputNum2').value;
+        let result = parseInt(number1) - parseInt(number2);
+        document.getElementById('demo').innerHTML='Subtraction: ' + result;
+        
+    }
+    function caculate3() {
+        let number1 = document.getElementById('inputNum1').value;
+        let number2 = document.getElementById('inputNum2').value;
+        let result = parseInt(number1) * parseInt(number2);
+        document.getElementById('demo').innerHTML='Multiplication: ' + result;
+        
+    }
+    function caculate4() {
+        let number1 = document.getElementById('inputNum1').value;
+        let number2 = document.getElementById('inputNum2').value;
+        let result = parseInt(number1) / parseInt(number2);
+        document.getElementById('demo').innerHTML='Division: ' + parseFloat(result).toFixed(2);
+        
+    }
+    //  Viết 4 hàm để lấy giá trị từ form, tính toán và trả về kết quả tương ứng với 4 phép tính. 
+    // Chúng ta có sử dụng 1 hàm duy nhất thay cho 4 hàm ở trên không?
+
+</script>

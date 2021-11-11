@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài tập 1: Hiển thị kết quả sử dụng hàm alert(): -->
+    <button type="button" onclick="kickChon();"> click me! </button>
+    <!-- Bài tập 2: Hiển thị kết quả sử dụng thẻ HTML: -->
+    <div>
+        <h1 id="showMe"></h1>
+        <button type="button" onclick="kickChon2();">click me!</button>
+    </div><br>
+    <!-- Bài tập 3: Hiển thị kết quả sử dụng hàm document.write(): -->
+        <button type="button" onclick="kickChon3();">click me!</button><br><br>
+    <!-- Bài tập 4: Hiển thị kết quả sử dụng hàm console.log(): -->
+        <button type="button" onclick="kickChon4();">click me!</button>
+    
+    
+    
+    <script>
+        // Bài tập 1: Hiển thị kết quả sử dụng hàm alert():
+        function kickChon(){
+            alert ('xin chao!');}
+        // Bài tập 2: Hiển thị kết quả sử dụng thẻ HTML:
+        function kickChon2() {
+            document.getElementById('showMe').innerHTML='Xin Chao!';
+        }  
+        // Bài tập 3: Hiển thị kết quả sử dụng hàm document.write(): 
+        function kickChon3() {
+            document.write('xin chào!');
+        } 
+        // Bài tập 4: Hiển thị kết quả sử dụng hàm console.log():
+        function kickChon4() {
+            console.log ('xin chào!');
+        }
+
+    </script>
+</body>
+</html>
