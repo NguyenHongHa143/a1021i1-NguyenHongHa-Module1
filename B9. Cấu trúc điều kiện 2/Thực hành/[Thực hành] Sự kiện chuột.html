@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <img id="myImage" src="https://salt.tikicdn.com/ts/product/20/b5/37/8c4a5f44037203a3295dffc2d91b3d94.jpg" width="20%" height="20%" />
+        <p>Click button below to move the image to right</p>
+        <button type="button" onclick="moveBallRight()">let Right!</button>
+        <button type="button" onclick="moveBallLeft()">Let Left</button>
+    </form>
+</body>
+</html>
+<script>
+    let imgBall = document.getElementById('myImage');
+    function init() {
+        imgBall.style.position='relative';
+        imgBall.style.left =  0 +'px';
+        
+    }
+    function moveBallR() {
+        imgBall.style.left = parseInt(imgBall.style.left) + 10 +'px';
+    }
+    function moveBallLeft() {
+        imgBall.style.left = parseInt(imgBall.style.left) - 10 +'px';
+    }
+    window.onload = init;
+</script>

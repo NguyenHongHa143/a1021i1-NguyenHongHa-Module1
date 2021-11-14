@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    
+    <img   id="nobita" src="https://th.bing.com/th/id/R.f815ec3162af21ae360f4e83d6e8326d?rik=Zi5wLivef0sY3w&pid=ImgRaw&r=0" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+    
+</body>
+</html>
+<script>
+
+let myImg = document.getElementById('nobita');
+    document.onkeydown = function (e) {
+        switch (e.which){
+            case 37:
+                myImg.style.left = parseInt(myImg.style.left)- 10 + 'px';
+                break;
+            case 38:
+            myImg.style.top = parseInt(myImg.style.top)- 10 + 'px';
+                break;
+            case 39: 
+            myImg.style.left = parseInt(myImg.style.left)+ 10 + 'px';
+                break;
+            case 40:
+            myImg.style.top = parseInt(myImg.style.top)+ 10 + 'px';
+                break;
+    }
+}
+    
+    
+</script>
