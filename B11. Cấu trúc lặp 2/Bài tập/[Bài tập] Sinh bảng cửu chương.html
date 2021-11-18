@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let table;
+    let a=1;
+    table = "<table border='1' width='800' cellpadding='3'>";
+    for (i=1;i<10;i++){
+        table = table + "<tr>";
+
+        for (j=2;j<10;j++){
+            table = table + '<td>' + j + ' x ' +a + ' = ' + a*j +  '</td>';
+            
+        }
+        a++;
+        table = table + "</tr>";
+    }
+    table = table + '</table>';
+    document.write(table);
+</script>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // Bài 1: Chuyển từ độ C sang độ F.
+    let temperatureC = parseFloat(prompt('Nhập nhiệt độ cần đổi (C): ' ));
+    let temperatureF = temperatureC * 9/5 + 32;
+    document.write('Độ F: ' + temperatureF);
+    // Bài 2: Chuyển từ mét sang feet:
+    let met = parseFloat(prompt('Nhập độ dài cần đổi (m)'));
+    let feet = met * 3.2808;
+    document.write('Feet = ' + feet);
+    // Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+    let square = parseInt(prompt('Nhập cạnh hình vuông'));
+    let areaSquare = square*square;
+    document.write('Diện tích hình vuông là: ' + areaSquare);
+    // Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+    let widthRectangle = parseInt(prompt('Nhập độ rộng của hình chữ nhật'));
+    let heightRectangle = parseInt(prompt('Nhập độ dài của hình chữ nhật'));
+    let areaRectangle = widthRectangle*heightRectangle;
+    document.write('Diện tích hình chữ nhật là: ' + areaRectangle);
+    // Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b
+    let triangleA = parseInt(prompt('Nhập cạnh a'));
+    let triangleB = parseInt(prompt('Nhập canh b'));
+    let areaTriangle = triangleA*triangleB*0.5;
+    document.write('Diện tích tam giác vuông là: ' + areaTriangle);
+    // Bài 6: Giải phương trình bậc 1.
+    //  ax+b=0
+    let a= parseInt(prompt('Nhập hệ số a'));
+    let b= parseInt(prompt('Nhập hệ số b'));
+     if (a == 0){
+         document.write('Phương trình vô nghiệm');
+     }
+     else {
+         document.write('Phương trình có nghiệm x = '+ -b/a);
+     }
+    //  Bài 7: Giải phương trình bậc 2.
+            
+    let a= parseInt(prompt('Nhập hệ số a'));
+    let b= parseInt(prompt('Nhập hệ số b'));
+    let c= parseInt(prompt('Nhập hệ số c'));
+    if (a==0){
+        if (b==0){
+            document.write('Phương trình vô nghiệm');
+        }
+        else{
+            document.write('Phương trình có nghiệm x = '+ -c/b);
+        }
+    }
+    else {
+        let denlta = b*b -(4*a*c);
+        if (denlta < 0){
+            document.write('Phương trình vô nghiệm');
+        }
+        else if (denlta == 0){
+            document.write ('Phương trình có nghiệm kép x1 = x2 = ' + -b/2*a);
+        }
+        else {
+            
+            document.write('Phương trình có nghiệm x1= '+ (-b + Math.sqrt(denlta))/(2*a));
+            document.write('<br/>');
+            document.write('Phương trình có nghiệm x2= '+ (-b - Math.sqrt(denlta))/(2*a));
+        }
+    }
+    // Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    let age = parseInt(prompt('Nhập một số bất kỳ'));
+     if (age>0 && age<120){
+         document.write('Đây là tuổi của một người');
+     }
+     else {
+         document.write('Đây không phải là tuổi của một người');
+     }
+    //  Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+        let a = parseInt(prompt('Nhập độ dài cạnh a'));
+        let b = parseInt(prompt('Nhập độ dài cạnh b'));
+        let c = parseInt(prompt('Nhập độ dài cạnh c'));
+        if (a>0 && b>0 && c>0) {
+            if (a+b >c && a+c>b && b+c >a){
+                document.write('Đây là 3 cạnh của một tam giác');
+            }
+            else {
+                document.write('Đây không phải 3 cạnh cảu một tam giác');
+            }
+        }
+        else{
+            document.write('Đây không phải 3 cạnh cảu một tam giác');
+        }
+    /* Bài 10: Viết chương trình tính giá điện.
+    Bậc 1	Cho kWh từ 0 - 50	    1.678
+    Bậc 2	Cho kWh từ 51 - 100	    1.734
+    Bậc 3	Cho kWh từ 101 - 200	2.014
+    Bậc 4	Cho kWh từ 201 - 300	2.536
+    Bậc 5	Cho kWh từ 301 - 400	2.834
+    Bậc 6	Cho kWh từ 401 trở lên	2.927*/
+    let moneyElectro = parseInt(prompt('Nhập số chữ điện (kWh): '));
+    let moneyElectroResult;
+    if (moneyElectro<50){
+        moneyElectroResult = 1.678*moneyElectro;
+        document.write('Tiền điện tháng này của bạn là: ' + moneyElectroResult);
+    }
+    else if (moneyElectro<100){
+        moneyElectroResult = 1.678*50 + (moneyElectro-50)*1.734;
+        
+    }
+    else if (moneyElectro<200){
+        moneyElectroResult = 1.678*50 + 1.734*50 + (moneyElectro-100)*2.014;
+    }
+    else if (moneyElectro<300){
+        moneyElectroResult = 1.678*50 + (moneyElectro-200)*2.536+ 1.734*50+ 100*2.014;
+    }
+    else if (moneyElectro<400){
+        moneyElectroResult = 1.678*50 + (moneyElectro-300)*2.834+ 1.734*50+ 100*2.014+ 100*2.536;
+    }
+    else {
+        moneyElectroResult = 1.678*50 + (moneyElectro-400)*2.927+ 1.734*50+ 100*2.014+ 100*2.536 + 100*2.834;
+    }
+        document.write('Tiền điện tháng này của bạn là: ' + moneyElectroResult);
+    /* Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+        30% thuế thu nhập nếu lương là 15 triệu
+        20% thuế thu nhập nếu lương từ 7 đến 15 triệu
+        10% thuế thu nhập nếu lương dưới 7 triệu*/
+    let wage = parseInt(prompt('Nhập tiền lương của bạn (triệu) '));
+    if (wage<7){
+        document.write('Thuế thu nhập cá nhân của bạn là ' + wage*0.1 +' triệu');
+    }
+    else if (wage<15){
+        document.write('Thuế thu nhập cá nhân của bạn là ' + wage*0.2 + ' triệu');
+    }
+    else {
+        document.write('Thuế thu nhập cá nhân của bạn là ' + wage*0.3  + ' triệu');
+    }
+    // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        
+
+
+     
+</script>

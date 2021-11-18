@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let height = parseInt(prompt('Nhập chiều cao của bạn!  ' + '(đơn vị centimet)'));
+    let weight = parseInt(prompt('Nhập cân nặng của bạn!  '+ '(đơn vị kilogam'));
+    let BMI =  parseFloat((weight*10000)/(height*height)).toFixed(2);
+    
+    if (BMI < 18.5){
+        alert ('BMI = '+ BMI + ' Thể trạng của bạn quá gầy, cần ăn uống thêm ');
+    }
+    else if (BMI < 25){
+        alert ('BMI = '+ BMI + ' Bạn có thể trạng cân đối, hãy cố gắng giữ gìn sức khỏe');
+    }
+    else if (BMI < 30){
+        alert ('BMI = ' +BMI + ' Bạn hơi thừa cân, cần tập luyện thể dục')
+    }
+    else {
+        alert ('BMI = ' +BMI + ' Bạn quá thừa cân, cần tập luyện thể dục');
+    }
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    p {
+        border: 1px solid black;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+    }
+    button {
+        height: 40px;
+        width: 40px;
+    }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <p id="result">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="inputNumber('1')">1</button></td>
+                <td><button onclick="inputNumber('2')">2</button></td>
+                <td><button onclick="inputNumber('3')">3</button></td>
+                <td><button onclick="inputOperator('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputNumber('4')">4</button></td>
+                <td><button onclick="inputNumber('5')">5</button></td>
+                <td><button onclick="inputNumber('6')">6</button></td>
+                <td><button onclick="inputOperator('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputNumber('7')">7</button></td>
+                <td><button onclick="inputNumber('8')">8</button></td>
+                <td><button onclick="inputNumber('9')">9</button></td>
+                <td><button onclick="inputOperator('*')">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="inputDelete()">C</button></td>
+                <td><button onclick="inputNumber('0')">0</button></td>
+                <td><button onclick="pressEqual()">=</button></td>
+                <td><button onclick="inputOperator('/')">/</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+   let inputResult = document.getElementById('result');
+   let result = 0;
+   function inputNumber(num) {
+       
+       if (inputResult.innerHTML === '0'){
+            inputResult.innerHTML = num;
+       }
+       else  if (result === 0){
+        inputResult.innerHTML += num;
+       }
+       else{
+           inputResult.innerHTML = num;
+           result = 0;
+       }
+   }
+   function inputOperator(operator) {
+    inputResult.innerHTML = inputResult.innerHTML + operator ;
+        result = 0;
+    
+   }
+   function inputDelete() {
+    inputResult.innerHTML = '0'; 
+        result = 0; 
+   }
+   function pressEqual() {
+     result = eval(inputResult.innerHTML);  
+     inputResult.innerHTML = result;
+     
+     
+   }
+</script>
+
+         
+    
