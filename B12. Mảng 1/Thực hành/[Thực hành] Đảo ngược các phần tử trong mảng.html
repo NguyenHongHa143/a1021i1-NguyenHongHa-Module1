@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//  Bài em tự làm
+    let x=[-3,5,1,3,2];
+    let y = [-3,5,1,3,2];
+    n=x.length;
+    for(i=0;i<n;i++){
+        if (i<n/2){
+        x[i] = x[n-1-i];
+        }
+        else {
+            x[i] = y[n-1-i];
+        }
+    }
+    document.write(x);
+// Bài giải 
+    let x = [-3, 5, 1, 3, 2, 10];
+    let first = 0;
+    while (first < last) {
+    let b = x[first];
+    x[first] = x[last];
+    x[last] = b;
+    first++;
+    last--;
+}
+document.write(x);
+
+</script>

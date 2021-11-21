@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let numbers = [-3, 5, 1, 3, 2, 10];
+// Dùng sort
+numbers.sort(function(a,b){
+    return b-a;
+})
+console.log('số lớn nhất trong mảng là ' + numbers[0]);
+// không dùng
+let max = 0;
+for (i=0;i<numbers.length;i++){
+    if (numbers[i]>max){
+        max = numbers[i];
+    }
+}
+console.log('số lớn nhất trong mảng là ' + max);
+
+
+
+
+
+</script>

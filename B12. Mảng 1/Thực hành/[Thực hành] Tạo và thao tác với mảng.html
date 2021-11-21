@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sample Screen</h2>
+    <input type="text" id="hihi" size="20">
+    <button type="button" onclick="addElement()">add</button>
+    <button onclick="displayElement()">Display</button><br>
+    <div id="demo">
+    
+    </div>
+    
+</body>
+</html>
+<script>
+    
+    let element = [];
+    let n=0;
+    function addElement(){
+     element[n] = document.getElementById('hihi').value;
+     n++;
+     document.getElementById('hihi').value = '';
+    }
+    
+    function displayElement(){
+        let e = '<hr>'
+        for(i=0;i<element.length;i++){
+            e = e + 'Element ' + i + ' = ' + element[i] + "<br>";
+            
+        }
+         
+        document.getElementById('demo').innerHTML = e;
+    }
+</script>

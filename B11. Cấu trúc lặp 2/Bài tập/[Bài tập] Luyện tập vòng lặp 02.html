@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // Bài 1: In dãy Finonaci (100 số đầu)
+    let i;
+    let num3 = 0;
+    let num1;
+    let num2;
+    document.write('Dãy Finonacci gồm:');
+    document.write('<br>');
+    for (i=0;i<100;i++){
+        if (i==0){
+         document.write(i); 
+         document.write('<br>');
+         num1=i;  
+        }
+        else if (i==1){  
+         document.write(i); 
+         document.write('<br>');
+         num2=i;
+        }
+        else {
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+         document.write(num3);
+         document.write('</br>');
+        }
+        
+    }
+// Bài 2: Tính giai thừa của một số nguyên dương
+ let num = parseInt(prompt('Nhập một số nguyên dương'));
+ let giaithua= 1;
+ for (i=1;i<=num;i++){
+    giaithua= giaithua*i;
+ }
+ document.write('Giai thừa của số ' + num + ' là: ' + giaithua);
+//  Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+ for (i=0;i<5;i++){
+     for(j=0;j<5;j++){
+         if (j>=i){
+             document.write('*');
+         }
+         else {
+             document.write('&ensp;');
+         }
+     }
+     document.write('<br>');
+ }
+
+ 
+ document.write('<br>');
+for (i=0;i<5;i++){
+    for (j=4;j>=0;j--){
+        if (i>=j){
+            document.write('*');
+        }
+        else{
+            document.write('&ensp;');
+        }
+    }
+    document.write('<br>');
+}
+document.write('<br>'); 
+for (i=0;i<5;i++){
+    for(j=4;j>=0;j--){
+        if (j>=i){
+            document.write('*');
+        }
+        else{
+            document.write('&ensp;'); 
+        }
+    }
+    document.write('<br>');
+}
+document.write('<br>');
+for (i=0;i<5;i++){
+    for(j=0;j<5;j++){
+        if (i>=j){
+            document.write('*');
+        }
+    }
+    document.write('<br>');
+}
+document.write('<br>');
+// Bài 4: In hình chữ nhật
+ for (i=0;i<8;i++){
+     if (i==0||i==7){
+         for (j=0;j<30;j++){
+             document.write('*');
+         }
+     }
+     else {
+         for (z=0;z<30;z++){
+             if (z==0||z==29){
+                document.write('*');  
+             }
+             else {
+                document.write('&ensp;'); 
+             }
+         }
+     }
+     document.write('<br>');
+ }
+//  Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+ let money = parseFloat(prompt('Nhập số tiền cần gởi:'));
+ let month = parseFloat(prompt('Nhập số tháng cần gởi'));
+//  lãi suất hàng tháng là 3.6%
+ let tienlai;
+ let tong;
+ let i=0;
+  do {
+      tienlai = money*3.6/100;
+      tong = tienlai+money;
+      money = tong;
+      i++;
+  }
+  while (i<=month)
+  document.write ( 'Số tiền lẫn lãi sau ' + month+' tháng là ' +parseFloat(tong).toFixed(2) + ' VND');
+
+</script>

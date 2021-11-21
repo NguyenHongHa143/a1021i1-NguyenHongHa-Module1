@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px;
+            height: 40px;
+            font-size: large;
+            position: absolute;
+            left: 20%;
+            bottom: 30%;
+            
+        }
+        button:hover{
+            background-color: aquamarine;
+        }
+        #demo{
+            position: relative;
+            background-image: url('https://codelearn.io/Upload/Blog/building-guess-the-number-game-by-python-63751216808.8762.jpg');
+            background-size: 500px 500px;
+            width: 500px;
+            height: 500px;
+            background-repeat: no-repeat;                                
+        }
+    </style>
+</head>
+<body>
+   <!-- <div id="demo">
+       <button type="button" onclick="guesGame()">CHƠI NÀO!</button>
+   </div>  -->
+</body>
+</html>
+<script>
+// Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+// let i;
+// for (i=1;i<100;i++){
+//     if (i==99){
+//         alert('Đã hoàn thành');
+//     }
+// document.write(i + '<br>');
+// }
+// // Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+//     let temperate;
+    
+//     do {
+//         temperate = prompt('Nhập nhiệt độ');
+//         if (temperate > 100){
+//             alert('Xin hay giảm nhiệt độ');
+//         }
+//         else if (temperate<20){
+//             alert('Xin hãy tăng nhiệt độ');
+//         }
+//         else {
+//             alert('Nhiệt độ của bạn đang ở mức bình thường');
+//         }
+//     }
+//     while (temperate!=0)
+Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    let i;
+    let j = 0;
+    let numF;
+    let numFi;
+    for (i=0;i<20;i++){
+        if (i==0){
+            document.write(i);
+            document.write('<br>');
+                numF= i;
+        }
+        else if (i==1){
+            document.write(i);
+            document.write('<br>');
+                numFi = i;       
+        }
+        else {
+            j = numF + numFi;
+            numF = numFi;
+            numFi=j;
+            document.write(j);
+            document.write('<br>');
+        }                     
+    }
+// Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+//  let a=0;
+//  let b=1;
+//  let j=0;
+//  let numF = 0;
+//  let numFi = 1;
+//  do {
+//     j = numF + numFi;
+//             numF = numFi;
+//             numFi=j;
+            
+//     if (j%5==0){
+//         a=b;
+//         alert('Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: ' + j);
+//     }
+//     a++;
+//     b++;
+//  }
+//  while (a<b)
+//  Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+//     let average=0;
+//     let i;
+//     let j=0;
+//     let numF = 0;
+//     let numFi = 1;
+// for (i=0;i<20;i++){
+//     if (i==0){
+//             average+=i;
+//         }
+//     else if (i==1){
+//             average+=i;       
+//         }
+//     else {
+//             j = numF + numFi;
+//             numF = numFi;
+//             numFi=j;
+//             average+=j;
+//         }
+// }
+// document.write('Tổng 20 số đầu tiên của dãy Fibonacci là: ' + average);
+// Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+//  let n = 0;
+//  let tong =0;
+//  let a=1;
+//  do {
+//      if (a%7==0){
+//          tong=tong+a;
+//          n++;
+//      }
+//      a++;
+//  }
+//  while (n<30)
+// document.write('Tổng 30 số chia hết cho 7 đầu tiên là: ' + tong);
+/* Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. 
+ Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó.
+Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz"*/
+//  let i;
+//  let a='Buzz';
+//  let b='Fizz';
+//  for (i=1;i<=100;i++){
+//      if (i%3==0 && i%5==0){
+//          document.write(a+b);
+//          document.write('</br>');
+//      }
+//      else if (i%5==0){
+//          document.write(b);
+//          document.write('</br>');
+//      }
+//      else if (i%3==0){
+//          document.write(a);
+//          document.write('</br>');
+//      }
+//      else {
+//          document.write(i);
+//          document.write('</br>');
+//      }
+//  }
+//  Bài 8: Game đoán số
+ function guesGame(){
+     let numMin = parseInt(prompt('Nhập khoảng bạn muốn đoán: (giá trị dưới) '));
+     let numMax = parseInt(prompt('Nhập khoảng bạn muốn đoán: (giá trị trên) '));
+     let a = Math.floor(Math.random() * ((numMax-numMin) +1) )+numMin;
+    // let a = Math.floor(Math.random() * 9)+12;
+     console.log(a);
+     alert ('Bạn có 3 lượt đoán, lần đoán sẽ gợi ý cho bạn, nếu đoán sai cả 3 lần, trò chơi sẽ bắt đầu lại.');
+     alert ('Bạn đã sẵn sàng??');
+     let b;
+     let i=1;
+     do {
+        b = parseInt(prompt('Mời bạn nhập số'));
+        if (b>a){
+            alert('Số bạn nhập hơi lớn');
+            i++;
+        }
+        else if (a>b){
+            alert ('Số bạn nhập hơi thấp');
+            i++
+        }
+        else if (a==b) {
+            i=10;
+        }
+        else{
+            i++;
+        }
+     }while (i<=3)
+    if (i==10){
+        alert('Chúc mừng bạn đã đoán chính xác');
+    } 
+    else {
+        alert('Chúc bạn may mắn lần sau. Click vào CHƠI NÀO!! để bắt đầu game mới!');
+    }
+    
+ }
+ 
+ 
+ 
+
+
+</script>
