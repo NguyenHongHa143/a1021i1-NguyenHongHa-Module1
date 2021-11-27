@@ -36,30 +36,30 @@
 </html>
 <script>
 // Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
-// let i;
-// for (i=1;i<100;i++){
-//     if (i==99){
-//         alert('Đã hoàn thành');
-//     }
-// document.write(i + '<br>');
-// }
-// // Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
-//     let temperate;
+let i;
+for (i=1;i<100;i++){
+    if (i==99){
+        alert('Đã hoàn thành');
+    }
+document.write(i + '<br>');
+}
+// Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    let temperate;
     
-//     do {
-//         temperate = prompt('Nhập nhiệt độ');
-//         if (temperate > 100){
-//             alert('Xin hay giảm nhiệt độ');
-//         }
-//         else if (temperate<20){
-//             alert('Xin hãy tăng nhiệt độ');
-//         }
-//         else {
-//             alert('Nhiệt độ của bạn đang ở mức bình thường');
-//         }
-//     }
-//     while (temperate!=0)
-Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    do {
+        temperate = prompt('Nhập nhiệt độ');
+        if (temperate > 100){
+            alert('Xin hay giảm nhiệt độ');
+        }
+        else if (temperate<20){
+            alert('Xin hãy tăng nhiệt độ');
+        }
+        else {
+            alert('Nhiệt độ của bạn đang ở mức bình thường');
+        }
+    }
+    while (temperate!=0)
+// Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
     let i;
     let j = 0;
     let numF;
@@ -84,82 +84,82 @@ Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
         }                     
     }
 // Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
-//  let a=0;
-//  let b=1;
-//  let j=0;
-//  let numF = 0;
-//  let numFi = 1;
-//  do {
-//     j = numF + numFi;
-//             numF = numFi;
-//             numFi=j;
+ let a=0;
+ let b=1;
+ let j=0;
+ let numF = 0;
+ let numFi = 1;
+ do {
+    j = numF + numFi;
+            numF = numFi;
+            numFi=j;
             
-//     if (j%5==0){
-//         a=b;
-//         alert('Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: ' + j);
-//     }
-//     a++;
-//     b++;
-//  }
-//  while (a<b)
+    if (j%5==0){
+        a=b;
+        alert('Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: ' + j);
+    }
+    a++;
+    b++;
+ }
+ while (a<b)
 //  Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
-//     let average=0;
-//     let i;
-//     let j=0;
-//     let numF = 0;
-//     let numFi = 1;
-// for (i=0;i<20;i++){
-//     if (i==0){
-//             average+=i;
-//         }
-//     else if (i==1){
-//             average+=i;       
-//         }
-//     else {
-//             j = numF + numFi;
-//             numF = numFi;
-//             numFi=j;
-//             average+=j;
-//         }
-// }
-// document.write('Tổng 20 số đầu tiên của dãy Fibonacci là: ' + average);
+    let average=0;
+    let i;
+    let j=0;
+    let numF = 0;
+    let numFi = 1;
+for (i=0;i<20;i++){
+    if (i==0){
+            average+=i;
+        }
+    else if (i==1){
+            average+=i;       
+        }
+    else {
+            j = numF + numFi;
+            numF = numFi;
+            numFi=j;
+            average+=j;
+        }
+}
+document.write('Tổng 20 số đầu tiên của dãy Fibonacci là: ' + average);
 // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
-//  let n = 0;
-//  let tong =0;
-//  let a=1;
-//  do {
-//      if (a%7==0){
-//          tong=tong+a;
-//          n++;
-//      }
-//      a++;
-//  }
-//  while (n<30)
-// document.write('Tổng 30 số chia hết cho 7 đầu tiên là: ' + tong);
+ let n = 0;
+ let tong =0;
+ let a=1;
+ do {
+     if (a%7==0){
+         tong=tong+a;
+         n++;
+     }
+     a++;
+ }
+ while (n<30)
+document.write('Tổng 30 số chia hết cho 7 đầu tiên là: ' + tong);
 /* Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. 
  Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó.
 Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz"*/
-//  let i;
-//  let a='Buzz';
-//  let b='Fizz';
-//  for (i=1;i<=100;i++){
-//      if (i%3==0 && i%5==0){
-//          document.write(a+b);
-//          document.write('</br>');
-//      }
-//      else if (i%5==0){
-//          document.write(b);
-//          document.write('</br>');
-//      }
-//      else if (i%3==0){
-//          document.write(a);
-//          document.write('</br>');
-//      }
-//      else {
-//          document.write(i);
-//          document.write('</br>');
-//      }
-//  }
+ let i;
+ let a='Buzz';
+ let b='Fizz';
+ for (i=1;i<=100;i++){
+     if (i%3==0 && i%5==0){
+         document.write(a+b);
+         document.write('</br>');
+     }
+     else if (i%5==0){
+         document.write(b);
+         document.write('</br>');
+     }
+     else if (i%3==0){
+         document.write(a);
+         document.write('</br>');
+     }
+     else {
+         document.write(i);
+         document.write('</br>');
+     }
+ }
 //  Bài 8: Game đoán số
  function guesGame(){
      let numMin = parseInt(prompt('Nhập khoảng bạn muốn đoán: (giá trị dưới) '));

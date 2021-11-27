@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+        font-size: 30px;
+        text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <h2 style="text-align: center;">
+            CỜ CARO ĐƠN GIẢN
+        </h2>
+    </div>
+    <div>
+        <p id="demo"></p>
+    </div>
+</body>
+</html>
+<script>
+    let b = document.getElementById('demo');
+    let board = [];
+    let data = '';
+// Tạo bàn cờ gồm các chấm
+    for(i=0;i<5;i++){
+        board[i]= new Array('.','.','.','.','.');    
+    }
+    for(i=0;i<5;i++){
+        data = data + '<br>'+ '<br>';
+        for(j=0;j<5;j++){
+            data = data + board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+data = data + '<br>'+'<br>' + '<input type = "button" onclick ="playerX()" value="Player X"/>' +"&nbsp;&nbsp;" + '<input type = "button" onclick ="playerO()" value="Player O"/>';
+b.innerHTML= '<hr>' + data;
+// Tạo nút x
+function playerX(){
+    data = '';
+    let Xx = parseInt(prompt('Mời bạn nhập tọa độ theo chiều ngang'));
+    let Yx = parseInt(prompt('Mời bạn nhập tọa độ theo chiều dọc'));
+    board[Xx-1][Yx-1]='x';
+    for(i=0;i<5;i++){
+        data = data + '<br>'+ '<br>';
+        for(j=0;j<5;j++){
+            data = data + board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    data = data + '<br>'+'<br>' + '<input type = "button" onclick ="playerX()" value="Player X"/>' +"&nbsp;&nbsp;" + '<input type = "button" onclick ="playerO()" value="Player O"/>';
+    b.innerHTML= '<hr>' +data;
+    let index = board.indexOf('x');
+    
+    check();
+    winner();
+    
+}
+// Tạo nút o
+function playerO(){
+    data = '';
+    let Xo = parseInt(prompt('Mời bạn nhập tọa độ theo chiều ngang'));
+    let Yo = parseInt(prompt('Mời bạn nhập tọa độ theo chiều dọc'));
+    board[Xo-1][Yo-1]='o';
+    for(i=0;i<5;i++){
+        data = data + '<br>'+ '<br>';
+        for(j=0;j<5;j++){
+            data = data + board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    data = data + '<br>'+'<br>' + '<input type = "button" onclick ="playerX()" value="Player X"/>' +"&nbsp;&nbsp;" + '<input type = "button" onclick ="playerO()" value="Player O"/>';
+    b.innerHTML= '<hr>' +data;
+    check();
+    winner();
+}
+
+// Tạo người chiến thắng 
+function check(){
+    // theo chiều ngang
+    for(i=0;i<5;i++){
+        if(board[i][0]=='x'&&board[i][1]=='x'&&board[i][2]=='x'){
+            return 'X';
+        }
+        else if (board[i][1]=='x'&&board[i][2]=='x'&&board[i][3]=='x'){
+            return 'X';
+        }
+        else if (board[i][2]=='x'&&board[i][3]=='x'&&board[i][4]=='x'){
+            return 'X';
+        }
+    }
+    // theo chiều dọc
+    for(i=0;i<5;i++){
+        if (board[0][i]=='x'&&board[1][i]=='x'&&board[2][i]=='x'){
+            return 'X';
+        }
+        else if (board[1][i]=='x'&&board[2][i]=='x'&&board[3][i]=='x'){
+            return 'X';
+        }
+        else if (board[2][i]=='x'&&board[3][i]=='x'&&board[4][i]=='x'){
+            return 'X';
+        }
+    }
+    let n=0;
+    let m = 0;
+    // theo chiều xiên
+    for (i=0;i<5;i++){
+        if(board[i][i]=='x'){
+            n++;
+        }
+        else if(board[i][4-i]=='x'){
+            m++;
+        }
+    }
+    if (n==3||m==3){
+        return 'X';
+    }
+    for(i=0;i<5;i++){
+        if(board[i][0]=='o'&&board[i][1]=='o'&&board[i][2]=='o'){
+            return 'O';
+        }
+        else if (board[i][1]=='o'&&board[i][2]=='o'&&board[i][3]=='o'){
+            return 'O';
+        }
+        else if (board[i][2]=='o'&&board[i][3]=='o'&&board[i][4]=='o'){
+            return 'O';
+        }
+    }
+    // theo chiều dọc
+    for(i=0;i<5;i++){
+        if (board[0][i]=='o'&&board[1][i]=='o'&&board[2][i]=='o'){
+            return 'O';
+        }
+        else if (board[1][i]=='o'&&board[2][i]=='o'&&board[3][i]=='o'){
+            return 'O';
+        }
+        else if (board[2][i]=='o'&&board[3][i]=='o'&&board[4][i]=='o'){
+            return 'O';
+        }
+    }
+    let j = 0;
+    let k = 0;
+    // theo chiều xiên
+    for (i=0;i<5;i++){
+        if(board[2][2]=='o'){
+            j++;
+            k++;
+        }
+        if(board[i][i]=='o'){
+            j++;
+        }
+        else if(board[i][4-i]=='o'){
+            k++;
+        }
+    }
+    if (j==3||k==3){
+        return 'O';
+    }
+
+} 
+function winner(){
+    if (check() == 'X'){
+        alert('X đã win');
+    }
+    else if (check()=='O'){
+        alert('O đã win');
+    }
+    
+}
+
+
+   
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. Ví dụ có mảng chuỗi như sau: myColor = ["Red", "Green", "White", "Black"];
+    // let myColor =  ["Red", "Green", "White", "Black"];
+    // document.write(myColor.join(' + '));
+    // Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+    let number = prompt('Nhập vào một dãy số: ').split('');
+    let a = [];
+    
+    a=number;
+    
+    for (i=0;i<a.length;i++){
+        if (a[i]%2==0){
+            a[i]= a[i]*(-1);
+        }       
+    }
+    document.write(a.join(''));
+// Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+// let string =prompt('Nhập một chuối bất kỳ');
+// let a=[];
+// let b = [];
+// a = string.split('');
+// b = string.toUpperCase();
+// b=b.split('')
+//  for (i=0;i<a.length;i++){
+//      if (a[i]==b[i]){
+//          b[i] = a[i].toLowerCase();
+//      }
+
+//  }
+
+// document.write(b.join(''));
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <div>
+        <p id="caro"></p>
+    </div>
+    <!-- <button type="button"> Change Value</button> -->
+    <br>
+</body>
+</html>
+<script>
+let b = document.getElementById('caro');
+let board = [];
+let data = "";
+for (let i = 0; i < 5; i++) {
+    board[i] = new Array(0, 0, 0, 0, 0);
+}
+
+for(i=0;i<5;i++){
+    data=data+ '<br>';
+    for(j=0;j<5;j++){
+        data=data+ board[i][j] +  '&nbsp;&nbsp;'
+    }
+}
+data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+b.innerHTML = data;
+function changeValue(){
+    let positionX = parseInt(prompt("X: "));
+    let positionY = parseInt(prompt("Y: "));
+    data = '';
+    board[positionX -1][positionY-1]='x';
+    for(i=0;i<5;i++){
+    data=data+ '<br>';
+    for(j=0;j<5;j++){
+        data=data+ board[i][j] +  '&nbsp;&nbsp;';
+
+
+        }
+        }
+data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+b.innerHTML = data;
+}
+</script>

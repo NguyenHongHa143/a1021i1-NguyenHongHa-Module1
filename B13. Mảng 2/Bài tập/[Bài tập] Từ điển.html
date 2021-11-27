@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            border: 1px solid black;
+            width: 180px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Từ Điển Anh - Việt</h2>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    ENGLISH
+                </td>
+                <td>
+                    VIETNAMESE
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="english" size="20">
+                </td>
+                <td>
+                    <p id="vietnamese"></p>
+                </td>
+                <td>
+                    <button type="button" onclick="translateE()">Translate</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    let dictionaryE = ['hello','goodbye','school','hi','dictionary'];
+    let dictionaryV = ['xin chào','tạm biệt','trường học','xin chào','từ điển'];
+    function translateE(){
+        let english = document.getElementById('english').value;
+        let vietnamese = document.getElementById('vietnamese');
+        for (i=0;i<dictionaryE.length;i++){
+            if (english==dictionaryE[i]){
+                vietnamese.innerHTML = dictionaryV[i];
+            }
+            else if (english==dictionaryE[0]){
+                vietnamese.innerHTML=dictionaryV[0];
+            }
+            else{
+                vietnamese.innerHTML = 'Không tìm thấy từ cần tìm'
+            }
+             
+        }      
+    }
+</script>
