@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let name1 = prompt('Nhập từ').split('');
+    // console.log(name)
+    function isPalindrome(word) {
+        console.log(word);
+        let n = word.length;
+        console.log(n);
+        for(i=0;i<(word.length/2);i++){
+            if(word[i]==word[word.length-1-i]){
+                n=n-1;
+            }
+        }
+        if(n<=(word.length/2)){
+            return 1;
+        }
+        return 0;
+    }
+    let result = isPalindrome(name1);
+    // console.log(result);
+    if(result==1){
+        alert("Đây là từ đối xứng");
+    }
+    else{
+        alert('Đây không là từ đối xứng');
+    }
+</script>
