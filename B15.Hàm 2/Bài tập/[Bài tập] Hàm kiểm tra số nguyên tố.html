@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function isPrime(num) {
+       if (num==2){
+           return 1;
+       }
+       else if(num==1){
+           return 0
+       }
+        let check = false;
+        for(i=2;i<num;i++){
+            if (num%i==0){
+                check = true;
+            }
+        }
+        if (!check){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+        
+    }
+let number = parseInt(prompt('Nhập số nguyên bất kỳ '));
+let result = isPrime(number);
+if (result == 1){
+    alert(number + ' là số nguyên tố')
+}
+else{
+    alert(number + ' không phải là số nguyên tố');
+}
+</script>

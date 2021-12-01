@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            
+            position: absolute;
+            right: 50%;
+            bottom: 50%;
+        }
+         
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                FEET
+            </td>
+            <td>
+                METERS
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" size="15" id="inputF" oninput="changeFeet()"> =
+            </td>
+            <td>
+                <input type="text" size="15" id="outputM">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                METERS
+            </td>
+            <td>
+                FEET
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" size="15" id="inputM" oninput="changeMeters()"> =
+            </td>
+            <td>
+                <input type="text" size="15" id="outputF">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    
+    function changeFeet() {
+        let numF = parseFloat(document.getElementById('inputF').value);
+        let meters = parseFloat(numF*0.305);
+        document.getElementById('outputM').value = meters;
+    }
+    
+    function changeMeters() {
+        let numM = parseFloat(document.getElementById('inputM').value);
+        let feet = parseFloat(numM*3.279);
+        document.getElementById('outputF').value = feet;
+    }
+</script>

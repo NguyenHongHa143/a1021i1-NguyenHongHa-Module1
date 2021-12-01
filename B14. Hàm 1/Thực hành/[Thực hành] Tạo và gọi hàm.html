@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+</html>
+<script>
+    function valueComfirm(answer){
+        let result = '';
+        if (answer){
+            result = 'Bạn vừa chọn đồng ý, thật tuyệt!';
+        }
+        else {
+            result = 'Bạn vừa chọn bỏ qua, thật tiếc!';
+        }
+    return result;
+    }
+    let answerQuestion = confirm('Mời bạn lựa chọn');
+    alert(valueComfirm(answerQuestion));
+
+</script>

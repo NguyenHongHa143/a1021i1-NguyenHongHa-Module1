@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 70px;
+            height: 40px;
+            background-color:rgb(58, 184, 58);
+            color: azure;
+            border-radius: 8px;
+        }
+        input{
+            height: 35px;
+        }
+        #addValue{
+            padding: 25px;
+            display: inline-block;
+            background-color: #f2f2f2;
+        }
+       
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        tr,td{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body style="height: 5000px;"  onload="load()">
+    <p><b>Add New Product</b></p>
+    <div id='addValue'> 
+        
+            <input id="newProduct" placeholder="  New Product" type="text" size = "50"/>
+            <button onclick="addValue()">Add</button>
+        
+    </div>
+    <p><b>Display All Product</b></p>
+    <p id="demo"></p>
+</body>
+</html>
+<script>
+    
+    let array = ['Sony Xperia','Samsung Galaxy','Nokia 6','Xiaomi Redmi Note 4','Apple iPhone 6S','Xiaomi Mi 5s Plus','Apple iPhone 8 Plus','Fujitsu F-04E','Oppo A71']
+    
+    function displayValue(arr){       
+        data ="<table width='100%' cellspacing='0' cellpadding='3'>";
+        for (i=0;i<array.length;i++){
+            data=data  + '<tr>' + '<td>' + array[i] + '</td>' + '<td>' + '<button onclick="editValue('+i+')">Edit</button>' + '</td>' + '<td>' + '<button onclick="deleteValue('+i+')">Delete</button>' + '</td>' ;
+            data= data+'</tr>';
+        }
+            data= data + '</table>';
+        return data;
+    }
+    // load khi vô wep
+    function load(){
+        document.getElementById('demo').innerHTML= displayValue(array);
+    }
+    // thêm Product vào 
+    function addValue(){
+        let newValue = document.getElementById('newProduct').value;
+        array.push(newValue);
+        n.push(n.length)
+        document.getElementById('demo').innerHTML= displayValue(array);
+        
+    }       
+    
+// xoá Product khi onclick
+    function deleteValue(index){
+        array.splice(index,1);        
+        document.getElementById('demo').innerHTML= displayValue(array);
+        alert('Đã xoá Product')
+    }
+// sửa Product khi onclick sẽ hiện hộp thoại
+    function editValue(){
+        let editProduct = prompt('Mời bạn sửa dữ liệu', array[index])
+        array[index] = editProduct;
+        document.getElementById('demo').innerHTML= displayValue(array);        
+    }
+
+
+
+
+
+</script>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>
+<script>
+    // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    function squart(num){
+        return num*num;
+    }
+    let number = parseInt(prompt('Nhập vào số bất kỳ'));
+    let result = squart(number);
+    alert('Bình phương của '+ number + ' là ' + result);
+    // // Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    function  getArea(radius){
+        let area = radius*radius*3.14;
+        return area;
+    }
+    function getCir(radius){
+        let cir = radius*2*3.14;
+        return cir;
+    }
+    let radius = parseInt(prompt('Nhập vào bán kính hình tròn'));
+    let resultA = getArea(radius);
+    let resultC = getCir(radius);
+    document.write('Diện tích hình tròn là: ' + resultA);
+    document.write('<br>');
+    document.write('Chu hình hình tròn là: ' + resultC);
+    // Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    function factorial(num){
+        let result = 1;
+        for(i=1;i<=num;i++){
+            result = result*i;
+        }
+        return result;
+    }
+    let number = parseInt(prompt('Nhập số nguyên bất kỳ'));
+    let factorial1 = factorial(number);
+    alert('Giai thừa của số ' + number + ' là: ' + factorial1 );
+    // Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    function checkNum(val){
+        
+        if (!isNaN(val)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    let value = prompt('Nhập vào bất kỳ');
+    let result = checkNum(value);
+    document.write(result);
+    // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    let array = [];
+    for (i=0;i<3;i++){
+        array[i] = parseInt(prompt('Nhập vào số nguyên thứ ' + (i+1)))
+    }
+    function findMin(arr){
+        let min = arr[0];
+        for(i=0;i<arr.length;i++){
+            if (arr[i]<min){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    let result = findMin(array);
+    document.write('Số bé nhất là ' + result);
+    // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false
+    function check(num){
+        if(num>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    let number = parseInt(prompt("nhập số nguyên bất kỳ "));
+    let result = check(number);
+    if (result){
+        document.write('Đây là số nguyên dương');
+    }
+    else{
+        document.write('Đây là số nguyên âm');
+    }
+    // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    function shift(num1,num2){
+        let arr = [];
+        let num0 = num1;
+            num1=num2;
+            num2=num0;
+            arr[0] = num1;
+            arr[1] = num2;
+        return arr;
+    }
+    let number1 = parseInt(prompt('Nhập số thứ nhất'));
+    let number2 = parseInt(prompt('Nhập số thứ 2'));
+    let result = shift(number1,number2);
+    document.write(result);
+    // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    function resever(arr){
+        arr=arr.reverse();
+        return arr;
+    }
+    let array = [];
+    for(i=0;i<4;i++){
+        array[i] = parseInt(prompt('Nhập vào số nguyên'))
+    }
+    let result = resever(array);
+    document.write(result);
+    // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. 
+    let array = [];
+    let stringRandom = (prompt('Nhập vào chuỗi không dấu: ')).split('');
+    array = stringRandom;
+    function checkString(arr){
+        let n = 0;
+        for(i=0;i<array.length;i++){
+            if(arr==array[i]){
+                n++;
+            }           
+        }
+
+        if(n==0){
+            return -1;
+        }
+        else{
+            return n;
+        }
+    }
+    let str = prompt('Nhập vào ký tự bất kỳ');
+    let result = checkString(str);
+    if (result==-1){
+        document.write('Ký tự bạn vừa nhập không nằm trong mảng');
+    }
+    else{
+        document.write('Ký tự bạn vừa nhập xuất hiện ' + result + ' lần trong mảng');
+    }
+    
+    
+</script>
