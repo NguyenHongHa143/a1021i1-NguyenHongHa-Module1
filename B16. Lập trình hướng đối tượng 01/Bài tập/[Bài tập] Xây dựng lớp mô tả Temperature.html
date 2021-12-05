@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+</html>
+<script>
+    class Temperature{
+        constructor(C){
+            this.C = C;
+        }
+        conversionF(){
+            return (this.C*1.8)+32;
+        }
+        conversionKevin(){
+            return (this.C+273.15);
+        }
+        getDisplay(){
+            return "Độ F tương ứng: " + this.conversionF() +"°C" + '<br>' + "Độ Kevin tương ứng: " + this.conversionKevin()+"°K";
+        }
+    }
+    let temperature = new Temperature(25);
+    document.getElementById('demo').innerHTML=temperature.getDisplay();
+</script>

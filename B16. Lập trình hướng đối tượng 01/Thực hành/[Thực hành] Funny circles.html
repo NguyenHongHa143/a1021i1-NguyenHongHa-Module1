@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+</body>
+</html>
+<script>
+    class Circle{
+        constructor(x,y,radius){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+}
+    
+
+    function createCircleRandom(){
+        let c = document.getElementById('myCanvas');
+        let ctx = c.getContext('2d');
+        let circle = new Circle(getRandomX(),getRandomY(),Math.floor(Math.random()*100));
+        ctx.beginPath();
+        ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+        ctx.fillStyle = getColor();
+        ctx.fill();
+    }
+    
+    function getColorRamdon(){
+        return Math.floor(Math.random()*225);
+    }
+    function getColor(){
+        let red = getColorRamdon();
+        let blue = getColorRamdon();
+        let green = getColorRamdon();
+        return "rgb("+ red+ "," +blue+","+green+")";
+    }
+    function getRandomX(){
+        return Math.floor(Math.random()*1368);
+    }
+    function getRandomY(){
+        return Math.floor(Math.random()*768);
+    }
+    // createCircleRandom();
+    for (i=0;i<100;i++){
+        createCircleRandom();
+    }
+    
+</script>

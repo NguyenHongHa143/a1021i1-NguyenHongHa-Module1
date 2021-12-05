@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="demo"></p>
+    </div>
+    <canvas id="Canvas" height="500" width="1368"></canvas>
+</body>
+</html>
+<script>
+    class Rectangle{
+        constructor(width,height){
+            this.width = width;
+            this.height = height;
+        }
+        getArea(){
+            return this.width*this.height;
+        }
+        getCircum(){
+            return (this.width+this.height)*2;
+        }
+        getDisplayRect(){
+            let ctx = document.getElementById('Canvas').getContext('2d');
+            ctx.strokeRect(50,50,this.width,this.height);
+            ctx.stroke();
+        }
+        getRect(){
+            return 'Chu vi hình chữ nhật là: '+ this.getCircum() + '<br>' + ' Diện tích hình chữ nhật là: ' + this.getArea()+'<br>'+this.getDisplayRect();
+        }
+    }
+    let rect = new Rectangle(200,100);
+    // document.write(rect.getDisplayRect());
+    document.getElementById('demo').innerHTML= rect.getRect();
+</script>

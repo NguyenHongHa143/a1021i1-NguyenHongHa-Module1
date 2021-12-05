@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Iphone 13</th>
+            <th>iphoneX</th>
+        </tr>
+        <tr>
+            <td><input type="text" size="20" id="spam13"></td>
+            <td><input type="text" size="20" id="spamX"></td>
+        </tr>
+        <tr>
+            <td><input type="text" size="20" id="inbox13"></td>
+            <td><input type="text" size="20" id="inboxX"></td>
+        </tr>
+        <tr>
+            <td>
+                <button id="sent13" onclick="sentMess13()">Sent</button>
+            </td>
+            <td>
+                <button id="sentX" onclick="sentMessX()">Sent</button>
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>
+<script>
+    class Iphone{
+        constructor(type){
+            this.type = type;
+            this.pin = 2;
+            this.messSpam = '';
+            this.messInbox = [];
+            this.messSent = [];
+            this.activie = true;
+        }
+        chargingBattery(energy){
+            this.pin=energy;
+        }
+        checkActivie(){
+           if(this.pin==0){
+               this.activie = false;
+           }
+           return this.activie;
+       }
+       turnOnOff(){
+           if(this.checkActivie()){
+           this.activie = !this.activie;
+           this.pin--;}
+           else{
+               alert('Pin yếu, vui lòng sạc pin!')
+           }
+       }
+       writtingMess(text){
+           if(this.checkActivie()){
+           this.messSpam = text;
+           this.pin--;}
+           else{
+            alert('Pin yếu, vui lòng sạc pin!')
+           }
+       }
+       sentMess(phone){
+           if(this.checkActivie()){
+            phone.messInbox = this.messSpam;
+            this.messSent = this.messSpam;
+            this.messSpam = "";
+            this.pin--;}
+            else{
+                alert('Pin yếu, vui lòng sạc pin!')
+            }
+       }
+       getInbox(){
+           if(this.checkActivie()){
+           return this.messInbox;
+           this.pin--;}
+           else{
+            alert('Pin yếu, vui lòng sạc pin!')
+           }
+       }
+       getSent(){
+           if(this.checkActivie()){
+           return this.messSent;
+           this.pin--;}
+           else{
+            alert('Pin yếu, vui lòng sạc pin!')
+           }
+       }
+
+    }
+     
+
+ let iphoneX = new Iphone('X');
+ let iphone13=new Iphone('13');
+function sentMess13(){
+   let messSpam13 = document.getElementById('spam13').value;
+   iphone13.writtingMess(messSpam13);
+   iphone13.sentMess(iphoneX);
+   document.getElementById('inboxX').value=iphoneX.messInbox;
+   document.getElementById('spam13').value='';
+}
+function sentMessX(){
+   let messSpamX = document.getElementById('spamX').value;
+   iphoneX.writtingMess(messSpamX);
+   iphoneX.sentMess(iphone13);
+   document.getElementById('inbox13').value=iphone13.messInbox; 
+   document.getElementById('spamX').value='';
+}
+
+ 
+
+   
+</script>
